@@ -1,0 +1,23 @@
+
+.header-container {
+  background-color: #0B132B;
+  color: #ffffff;
+  padding: 5px 35px; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  font-size: 16px;
+}
+
+.recommend {
+  font-size: 24px;
+}
+
+
+.profile {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px;
+  margin-left:900px;
+  align-items: center;
+}
