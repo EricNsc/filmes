@@ -6,7 +6,7 @@ const API_KEY = process.env.API_KEY;
 
 export default async function Page() {
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`
   );
 
   if (!response.ok) {
