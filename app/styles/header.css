@@ -4,7 +4,6 @@
   color: #ffffff;
   padding: 15px 35px; 
   display: flex;
-  justify-content: space-between; 
   align-items: center; 
   font-size: 16px;
 }
@@ -14,10 +13,3 @@
 }
 
 
-.profile {
-  display: flex;
-  justify-content: flex-end; 
-  gap: 10px;
-  margin-left:900px;
-  align-items: center;
-}

@@ -15,7 +15,7 @@ export default function Search() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2">
+    <form onSubmit={handleSubmit} className="flex items-center gap-2 ml-[50px]">
       <input
         type="search"
         placeholder="Pesquisar"
