@@ -19,14 +19,14 @@ export default function Search() {
       <input
         type="search"
         placeholder="Pesquisar"
-        className="w-[600px] h-[40px] p-4 rounded-full bg-[#406E8E] text-white focus:outline-none"
+        className="w-[600px] h-[40px] p-4 rounded-full bg-[#2a2a30] text-[#FFFFFF] focus:outline-none"
         onChange={(e) => setSearch(e.target.value)}
         value={search}
       />
       <button
         type="submit"
         disabled={!search}
-        className="p-2 bg-[#1e3a56] text-white rounded-full hover:bg-[#294d6f] disabled:opacity-50 flex items-center justify-center"
+        className="p-2 bg-[#3071e9] text-white rounded-full hover:opacity-85 disabled:opacity-60 flex items-center justify-center"
       >
         <IoIosSearch size={20} />
       </button>

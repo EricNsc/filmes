@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 
 export default function Card({ result }) {
   return (
-    <div className="flex flex-col bg-[#1C2541] rounded-lg overflow-hidden w-[300px] h-auto shadow-md shadow-[#1a212b]">
+    <div className="flex flex-col bg-[#27272c] rounded-lg overflow-hidden w-[300px] h-auto hover:bg-[#3855a7] hover:scale-105 transition-all duration-300">
       <Link href={`/movie/${result.id}`} passHref>
         <div className="relative w-full" style={{ paddingBottom: '150%' }}>
           <img

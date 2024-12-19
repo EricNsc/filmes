@@ -75,8 +75,21 @@ export default async function Movie({ params }) {
                 {movie.vote_average?.toFixed(1)}
               </span>
             </div>
+
+            {/* Exibindo os gêneros */}
+            <div className="flex flex-wrap gap-2 mt-4">
+              {movie.genres?.map((genre) => (
+                <span
+                  key={genre.id}
+                  className="text-xs bg-[#37435a] rounded-full px-3 py-1"
+                >
+                  {genre.name}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
+
         <div className="p-4 px-16">
           <h2 className="text-2xl font-bold text-white mb-10 mt-10">
             Recomendações
@@ -85,18 +98,18 @@ export default async function Movie({ params }) {
             {recommendations.results.map((recommendedMovie) => (
               <div
                 key={recommendedMovie.id}
-                className="flex-shrink-0 w-[200px] snap-start"
+                className="flex-shrink-0 w-[200px] h-[350px] snap-start mb-6 bg-[#27272c] rounded-lg overflow-hidden hover:bg-[#3855a7] hover:scale-95 transition-all duration-300"
               >
                 <Link
                   href={`/movie/${recommendedMovie.id}`}
-                  className="flex flex-col items-center"
+                  className="flex flex-col items-center "
                 >
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${recommendedMovie.poster_path}`}
                     alt={recommendedMovie.title}
-                    className="w-[200px] h-[300px] rounded-md object-cover"
+                    className="w-[200px] h-[300px] rounded-top-md object-cover"
                   />
-                  <p className="text-white text-left mt-2 text-sm">
+                  <p className="text-white text-left my-4 text-sm truncate max-w-[150px]">
                     {recommendedMovie.title}
                   </p>
                 </Link>
