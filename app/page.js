@@ -4,9 +4,16 @@ import Results from "./components/Results";
 
 const API_KEY = process.env.API_KEY;
 
-export default async function Page() {
+export default async function Page({ searchParams }) {
+  const genre = searchParams.genre || "fetchTrending"; 
+
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`
+    `https://api.themoviedb.org/3${
+      genre === 'fetchTopRated' 
+        ? `/movie/top_rated` 
+        : `/trending/movie/week` 
+    }?api_key=${API_KEY}&language=pt-BR&page=1`,
+    { next: { revalidate: 10000 } }
   );
 
   if (!response.ok) {
@@ -18,7 +25,7 @@ export default async function Page() {
   return (
     <>
       <main>
-        <Header />
+        <Header genre={genre} /> 
         <Results Results={data.results} />
       </main>
     </>
