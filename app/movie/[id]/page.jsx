@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "@/app/components/Header";
+import Header from "@/components/Header";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 
@@ -78,15 +78,16 @@ export default async function Movie({ params }) {
 
             {/* Exibindo os gêneros */}
             <div className="flex flex-wrap gap-2 mt-4">
-              {movie.genres?.map((genre) => (
-                <span
-                  key={genre.id}
-                  className="text-xs bg-[#37435a] rounded-full px-3 py-1"
-                >
-                  {genre.name}
-                </span>
-              ))}
-            </div>
+  {movie.genres?.map((genre) => (
+    <a
+      key={genre.id}
+      href={`/?genre=${genre.id}`}
+      className="text-xs bg-[#37435a] rounded-full px-3 py-1 hover:bg-[#445571] transition-colors cursor-pointer"
+    >
+      {genre.name}
+    </a>
+  ))}
+</div>
           </div>
         </div>
 
@@ -98,7 +99,7 @@ export default async function Movie({ params }) {
             {recommendations.results.map((recommendedMovie) => (
               <div
                 key={recommendedMovie.id}
-                className="flex-shrink-0 w-[200px] h-[350px] snap-start mb-6 bg-[#27272c] rounded-lg overflow-hidden hover:bg-[#3855a7] hover:scale-95 transition-all duration-300"
+                className="flex-shrink-0 w-[200px] h-[350px] snap-start mb-6 bg-[#27272c] rounded-lg overflow-hidden hover:bg-[#3855a7] transition-all duration-300"
               >
                 <Link
                   href={`/movie/${recommendedMovie.id}`}
