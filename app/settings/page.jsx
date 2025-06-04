@@ -58,7 +58,7 @@ export default function SettingsPage() {
         <Header />
         <div className="container mx-auto mt-[80px] px-4 py-6 flex justify-center">
           {/* Content */}
-          <section className="w-full lg:w-3/4 bg-[#292929] dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-12">
+          <section className="w-full bg-[#2A2A2A] dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-12">
             {/* Tema */}
             <div id="tema">
               <h2 className="text-2xl font-bold mb-4">Tema</h2>
@@ -88,7 +88,7 @@ export default function SettingsPage() {
               <h2 className="text-2xl font-bold mb-4">Linguagem</h2>
               <p className="mb-4">Selecione seu idioma preferido.</p>
               <Select value={language} onValueChange={setLanguage}>
-                <SelectTrigger className="w-[220px] bg-[#1c1c1f] border-gray-700">
+                <SelectTrigger className="w-[220px] bg-[#1c1c1f] border-transparent hover:border-[#5A4FCF]">
                   <div className="flex items-center gap-2">
                     {selectedLanguage && (
                       <>
@@ -104,7 +104,7 @@ export default function SettingsPage() {
                     )}
                   </div>
                 </SelectTrigger>
-                <SelectContent className="bg-[#1c1c1f] border-gray-700 text-white">
+                <SelectContent className="bg-[#2A2A2A] border-[#1a1a1a]  text-white">
                   {languages.map(({ value, label, flag }) => (
                     <SelectItem
                       key={value}

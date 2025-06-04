@@ -1,6 +1,6 @@
 import React from "react";
-import Results from "@/app/components/Results"; 
-import Header from "@/app/components/Header";
+import Results from "@/components/Results"; 
+import Header from "@/components/Header";
 
 export default async function SearchPage({ params }) {
   const { searchTerm } = params; 

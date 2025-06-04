@@ -1,35 +1,37 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Atualize o import para "next/navigation"
+import { useRouter } from "next/navigation";
 import { IoIosSearch } from "react-icons/io";
 
 export default function Search() {
   const [search, setSearch] = useState("");
-  const router = useRouter(); // Usando a versão do "next/navigation"
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!search) return;
-    router.push(`/search/${search}`); 
+    router.push(`/search/${search}`);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex items-center gap-2 ml-[50px]">
-      <input
-        type="search"
-        placeholder="Pesquisar"
-        className="w-[600px] h-[40px] p-4 rounded-full bg-[#292929] text-[#ffffff] focus:outline-none"
-        onChange={(e) => setSearch(e.target.value)}
-        value={search}
-      />
-      <button
-        type="submit"
-        disabled={!search}
-        className="p-2 bg-[#3a7bd5] text-white rounded-full hover:opacity-85 disabled:opacity-60 flex items-center justify-center"
-      >
-        <IoIosSearch size={20} />
-      </button>
+    <form onSubmit={handleSubmit} className="flex items-center gap-2 ml-[15px] relative">
+      <div className="relative">
+        <input
+          type="search"
+          placeholder="Pesquisar"
+          className="w-[400px] h-[40px] pl-6 pr-16 rounded-xl bg-[#2a2a2a] text-white focus:outline-none border-2 border-transparent focus:border-[#5A4FCF] placeholder-[#949494] transition-all"
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+        />
+        <button
+          type="submit"
+          disabled={!search}
+          className="absolute right-3 top-1/2 -translate-y-1/2 p-2  text-white rounded-full  disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center justify-center"
+        >
+          <IoIosSearch size={22} className="shrink-0" />
+        </button>
+      </div>
     </form>
   );
 }

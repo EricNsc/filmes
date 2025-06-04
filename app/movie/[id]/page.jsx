@@ -82,7 +82,7 @@ export default async function Movie({ params }) {
     <a
       key={genre.id}
       href={`/?genre=${genre.id}`}
-      className="text-xs bg-[#37435a] rounded-full px-3 py-1 hover:bg-[#445571] transition-colors cursor-pointer"
+      className="text-xs bg-[#5a4fcf49] rounded-full px-3 py-1 hover:bg-[#5A4FCF] transition-colors cursor-pointer"
     >
       {genre.name}
     </a>
@@ -99,7 +99,7 @@ export default async function Movie({ params }) {
             {recommendations.results.map((recommendedMovie) => (
               <div
                 key={recommendedMovie.id}
-                className="flex-shrink-0 w-[200px] h-[350px] snap-start mb-6 bg-[#27272c] rounded-lg overflow-hidden hover:bg-[#3855a7] transition-all duration-300"
+                className="flex-shrink-0 w-[200px] h-[350px] snap-start mb-6 bg-[#2A2A2A] rounded-lg overflow-hidden hover:bg-[#5A4FCF] transition-all duration-300"
               >
                 <Link
                   href={`/movie/${recommendedMovie.id}`}

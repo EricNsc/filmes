@@ -14,12 +14,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #303133;
+  background: #2A2A2A;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4c5c7a;
+  background: #5a4fcf49;
 }
 
 ::-webkit-scrollbar:horizontal {
@@ -31,12 +31,12 @@
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  background: #303133;
+  background: #2A2A2A;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:horizontal:hover {
-  background: #4c5c7a;
+  background: #5a4fcf49;
 }
 
 @layer base {
